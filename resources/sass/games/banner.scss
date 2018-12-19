@@ -1,0 +1,14 @@
+// NOT DONE YET
+
+
+.banner-game{
+  display: inline-block;
+  position: relative;
+  //width: 10.9375em;
+  margin-right: 1.25em;
+
+  .banner {
+    flex-direction: column;
+    background-color: $col-dark-blue;
+  }
+}

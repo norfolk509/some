@@ -1,0 +1,51 @@
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: .5em;
+  padding: .5em 1em;
+  font-weight: 700;
+  cursor: pointer;
+  border-radius: 10em;
+
+  &.filled {
+    &.white {
+      color: $col-primary;
+      background-color: $col-white;
+    }
+
+    &.blue {
+      color: $col-white;
+      background-color: $col-light-blue;
+    }
+
+
+    &.primary {
+      color: $col-white;
+      background-color: $col-primary;
+    }
+  }
+
+  &.outlined {
+    &.white {
+      color: $col-white;
+      border: 1px solid $col-white;
+    }
+
+    &.blue {
+      color: $col-blue-gray;
+      border: 1px solid $col-blue-gray;
+    }
+
+    &.primary {
+      color: $col-primary;
+      border: 1px solid $col-primary;
+    }
+  }
+
+  &.btn-get-gold {
+    font-size: .75em;
+    text-transform: uppercase;
+    border-width: 1px;
+  }
+}

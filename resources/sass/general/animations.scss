@@ -1,0 +1,39 @@
+// Animations
+$animDisplay: (
+  ("Up", "Y", ""),
+  ("Down", "Y", "-"),
+  ("Left", "X", "-"),
+  ("Right", "X", ""),
+);
+
+@each $name, $direction, $sign in $animDisplay {
+  .display-#{to-lower-case($name)} {
+    animation: display#{$name} $transition-time ease-in-out forwards;
+  }
+
+  @keyframes display#{$name} {
+    from {
+      opacity: 0;
+      transform: translate#{$direction}#{unquote("(#{$sign}20px)")};
+    }
+    to {
+      opacity: 1;
+      transform: translate#{$direction}#{unquote("(0)")};
+    }
+  }
+
+  .hide-#{to-lower-case($name)} {
+    animation: hide#{$name} $transition-time ease-in-out forwards;
+  }
+
+  @keyframes hide#{$name} {
+    from {
+      opacity: 1;
+      transform: translate#{$direction}#{unquote("(0)")};
+    }
+    to {
+      opacity: 0;
+      transform: translate#{$direction}#{unquote("(#{$sign}20px)")};
+    }
+  }
+}

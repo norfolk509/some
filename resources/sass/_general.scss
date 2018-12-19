@@ -1,0 +1,107 @@
+@import "general/structure";
+
+@import "general/lists";
+
+@import "general/sizes";
+
+@import "general/colors";
+
+@import "general/buttons";
+
+@import "general/icons";
+
+@import "general/dropdowns";
+
+@import "general/popups";
+
+@import "general/transforms";
+
+@import "general/animations";
+
+.svg {
+  display: flex;
+
+  svg {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.ripple {
+  position: relative;
+  overflow: hidden;
+  transform: translate3d(0,0,0);
+
+  &:after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    content: "";
+    transition: transform .5s, opacity 1s;
+    transform: scale(10, 10);
+    pointer-events: none;
+    opacity: 0;
+    background-image: radial-gradient(circle, $col-white 10%, transparent 10.01%);
+    background-repeat: no-repeat;
+    background-position: 50%;
+  }
+
+  &:active:after {
+    transition: 0s;
+    transform: scale(0, 0);
+    opacity: .3;
+  }
+
+  &.filled {
+    &.white {
+      &:after {
+        background-image: radial-gradient(circle, $col-primary 10%, transparent 10.01%);
+      }
+    }
+  }
+}
+
+.hide-mobile {
+  @include device {
+    display: none;
+  }
+}
+
+.general-title {
+  font-size: .875em;
+  font-weight: 700;
+}
+
+.txt-up {
+  text-transform: uppercase;
+}
+
+.txt-one-line {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+// Night / Day switch
+.night-day {
+  font-size: em(24px);
+  cursor: pointer;
+  border: 1px solid $col-blue-gray;
+
+  & > * {
+    flex-basis: 50%;
+  }
+
+  .svg {
+    width: 1em;
+    height: 1em;
+    margin: .4em;
+  }
+
+  .selected {
+    background-color: $col-blue-gray;
+  }
+}
