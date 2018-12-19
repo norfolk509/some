@@ -14,6 +14,7 @@ return [
         'production' => 'http://ded5502.ded.reflected.net:8105',
         'stage' => 'http://ded5502.ded.reflected.net:8105',
         'develop' => 'http://ded5502.ded.reflected.net:8105',
+        'develop-mtl' => 'http://ded5502.ded.reflected.net:8105',
         'local' => 'http://ded5502.ded.reflected.net:8105',
     ],
     'uri' => [

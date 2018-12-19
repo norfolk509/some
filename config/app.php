@@ -171,6 +171,7 @@ return [
          */
         Jenssegers\Agent\AgentServiceProvider::class,
         BladeSvg\BladeSvgServiceProvider::class,
+        Jenssegers\Mongodb\MongodbServiceProvider::class,
     ],
 
     /*
@@ -226,5 +227,5 @@ return [
         'Html' => Collective\Html\HtmlFacade::class,
 
     ],
-
+    'ftp_url' => env('FTP_URL'),
 ];

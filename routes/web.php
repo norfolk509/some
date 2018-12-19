@@ -15,8 +15,17 @@ Route::get('/',  ['uses'=>'HomeController@landing', 'as'=>'landing']);
 
 Route::get('/home', ['uses'=>'HomeController@index', 'as'=>'home']);
 
-Route::get('/games/{game}', 'GameController@show');
+Route::get('/games/{game}', ['uses'=>'GameController@show', 'as'=>'game.info']);
 
+/**********************
+ ***  Static pages ***
+ **********************/
+
+Route::get('/about', ['uses'=>'StaticPagesController@about', 'as'=>'about']);
+
+Route::get('/publishers', ['uses'=>'StaticPagesController@publishers', 'as'=>'publishers']);
+
+Route::get('/directory', ['uses'=>'StaticPagesController@directory', 'as'=>'directory']);
 
 /**********************
  ***  Support pages ***
@@ -37,3 +46,8 @@ Route::group(['prefix' => 'support'], function()
 
 Route::post('/user/set-game-notifications/{user_id}/{game_id}', 'UserSettingsController@setNotifications');
 Route::post('/user/set-favorite-game/{user_id}/{game_id}', 'UserSettingsController@setFavoriteGame');
+
+/**********************
+ ***  Lgbtq Pages ***
+ **********************/
+Route::get('/promo/{lgbtq?}/{genre?}', ['uses'=>'LgbtController@genres', 'as'=>'genres']);

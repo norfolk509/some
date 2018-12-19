@@ -46,3 +46,35 @@ if (!function_exists('asset')) {
         return '/' . $path;
     }
 }
+
+if (!function_exists('metaTracking')) {
+
+    /**
+     * Return general Meta Tracking string
+     * @param string $trackingString
+     * @return string
+     */
+    function metaTracking(string $trackingString = null)
+    {
+        $domain = !empty(env('SITE_TYPE')) && env('SITE_TYPE') == 'adult' ? 'NTK:' : 'NTKSFW:';
+        $login  = !empty(session('userGrade')) && session('userGrade') > 0 ? 'MA:' : 'TOUR:';
+        return $domain . $login . $trackingString;
+    }
+}
+
+if (!function_exists('dataTracking')) {
+
+    /**
+     * Return general Data Tracking String
+     * @param string $pageType
+     * @param string|null $linkType
+     * @param string|null $trackStr
+     * @return string
+     */
+    function dataTracking(string $pageType, string $linkType = null, string $trackStr = null)
+    {
+        $domain = !empty(env('SITE_TYPE')) && env('SITE_TYPE') == 'adult' ? 'NTK:' : 'NTKSFW:';
+        $login  = !empty(session('userGrade')) && session('userGrade') > 0 ? 'MA:' : 'TOUR:';
+        return $domain . $login . $pageType . (!empty($linkType) ? ':' . $linkType : '') . (!empty($trackStr) ? ' ' . $trackStr : '');
+    }
+}

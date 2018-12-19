@@ -38,7 +38,12 @@ class GameModel
 
         $guzzleClient = new Client();
         try {
-            $request = $guzzleClient->get($this->baseApiUrl . $uri);
+            $request = $guzzleClient->get($this->baseApiUrl . $uri, [
+                'query' => [
+                    'platform' => 1,
+                    'adult' => 1,
+                ]
+            ]);
             $returnData = json_decode($request->getBody()->getContents(), true);
         } catch (ClientException $e) {
             $returnData = [];

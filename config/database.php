@@ -168,6 +168,46 @@ return [
             'username'  => env('DB_SL_MARKETING_USERNAME'),
             'password'  => env('DB_SL_MARKETING_PASSWORD'),
         ],
+//      MongoDB messages
+        'mgdbmessages' => [
+            'driver'   => 'mongodb',
+            'host'     => env('MONGO_DB_HOST', 'localhost'),
+            'port'     => env('MONGO_DB_PORT', 27017),
+            'database' => env('MONGO_DB_MESSAGES_DATABASE'),
+            'username' => env('MONGO_DB_USERNAME'),
+            'password' => env('MONGO_DB_PASSWORD'),
+            'options'  => []
+        ],
+//      MongoDB activity
+        'mgdbactivity' => [
+            'driver'   => 'mongodb',
+            'host'     => env('MONGO_DB_HOST', 'localhost'),
+            'port'     => env('MONGO_DB_PORT', 27017),
+            'database' => env('MONGO_DB_ACTIVITY_DATABASE'),
+            'username' => env('MONGO_DB_USERNAME'),
+            'password' => env('MONGO_DB_PASSWORD'),
+            'options'  => []
+        ],
+//      MongoDB cto messages
+        'mgdbctomessages' => [
+            'driver'   => 'mongodb',
+            'host'     => env('MONGO_DB_HOST', 'localhost'),
+            'port'     => env('MONGO_DB_PORT', 27017),
+            'database' => env('MONGO_DB_CTO_MESSAGES_DATABASE'),
+            'username' => env('MONGO_DB_USERNAME'),
+            'password' => env('MONGO_DB_PASSWORD'),
+            'options'  => []
+        ],
+//      MongoDB unread
+        'mgdbunread' => [
+            'driver'   => 'mongodb',
+            'host'     => env('MONGO_DB_HOST', 'localhost'),
+            'port'     => env('MONGO_DB_PORT', 27017),
+            'database' => env('MONGO_DB_UNREAD_DATABASE'),
+            'username' => env('MONGO_DB_USERNAME'),
+            'password' => env('MONGO_DB_PASSWORD'),
+            'options'  => []
+        ],
     ],
 
     /*

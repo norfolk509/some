@@ -64,6 +64,11 @@ return [
             'url' => env('AWS_URL'),
         ],
 
+        'promo_lgbt_path' => [
+            'driver' => 'custom',
+            'root' => env('FTP_URL'),
+        ],
+
     ],
 
 ];

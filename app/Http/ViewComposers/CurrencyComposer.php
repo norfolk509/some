@@ -8,7 +8,6 @@ use Session;
 class CurrencyComposer
 {
 
-    public $currencySymbol;
     public $country;
 
 
@@ -25,38 +24,38 @@ class CurrencyComposer
 
     private function getCountry()
     {
-//        if (empty(session('country'))) {
-//            $ip =  geoip()->getClientIP();
-////            TODO add a condition when enviroments are defined
-////            $ip = '163.82.113.160'; // to test in local env
-//            $countryInfo = geoip()->getLocation($ip);
-//            $isoCode = $countryInfo->getAttribute('iso_code');
-//            $currencySymbol = $this->getCurrencyType($isoCode);
-//            $country = [
-//                'isoCode' => $isoCode,
-//                'currencySymbol' => $currencySymbol
-//            ];
-//            session(['country' => $country]);
-//        }
-//
-//        $this->country = session('country');
+        if (!(session()->has('country'))) {
+            $ip =  geoip()->getClientIP();
+            if (env('APP_ENV') == 'develop-mtl') {
+                $ip = '163.82.113.160'; // to test in local env
+            }
+            $countryInfo = geoip()->getLocation($ip);
+            $isoCode = $countryInfo->getAttribute('iso_code');
+            $currencySymbol = $this->getCurrencyType($isoCode);
+            $country = [
+                'isoCode' => $isoCode,
+                'currencySymbol' => $currencySymbol
+            ];
+            session(['country' => $country]);
+        }
+        $this->country = session('country');
     }
 
     private function getCurrencyType($iso_code)
     {
-//        $symbolType = config('constants.symbolType');
-//        if (in_array($iso_code, $symbolType['GBP'], true)) {
-//            return self::CURRENCY['GBP'];
-//        }
-//        if (in_array($iso_code, $symbolType['EURO'], true)) {
-//            return self::CURRENCY['EURO'];
-//        }
-//        return self::CURRENCY['USD'];
+        $symbolType = config('constants.symbolType');
+        if (in_array($iso_code, $symbolType['GBP'], true)) {
+            return self::CURRENCY['GBP'];
+        }
+        if (in_array($iso_code, $symbolType['EURO'], true)) {
+            return self::CURRENCY['EURO'];
+        }
+        return self::CURRENCY['USD'];
     }
 
     public function compose(View $view)
     {
         // todo logic will be done via helper and call for currency will be handled gateway api side
-        $view->with('currencySymbol', '');
+        $view->with('currencySymbol', $this->country['currencySymbol']);
     }
 }
