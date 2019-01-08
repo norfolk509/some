@@ -6,7 +6,7 @@ var brTablet = 600;
 var brMobileSmall = 360;
 
 // Custom Variables
-var animationTime = 200;
+var animationTime = 300;
 
 // Sidebar variable to check if opened/closed
 var sidebarStatus = 1;

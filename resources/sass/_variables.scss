@@ -76,6 +76,12 @@ $header-height-mobile: 45px;
 
 // Timings
 $transition-time: .3s;
+$transition-time-short: .15s;
+$transition-delay: .5s;
+
+// Transforms
+$card-scale: 1.25;
+$card-scale-small: 1.1;
 
 // Typography
 $font-family: "Open Sans", sans-serif;
@@ -86,9 +92,11 @@ $line-height-base: 1.4;
 $col-black: #000;
 $col-blue-gray: #888eb6;
 $col-body-bg: #2a2b3b;
+$col-border: #37384c;
 $col-dark-blue: #212330;
 $col-darker-blue: #181a2a;
 $col-dark-red: #902238;
+$col-green: #2cc946;
 $col-light-blue: #6871b6;
 $col-light-gray: #eaeaea;
 $col-primary: #e53155;

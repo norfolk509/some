@@ -14,18 +14,18 @@
 // Fill Colors
 .fill-blue {
   & * {
-    fill: $col-blue-gray;
+    fill: $col-blue-gray !important;
   }
 }
 
 .fill-primary, .fill-red {
   & * {
-    fill: $col-primary;
+    fill: $col-primary !important;
   }
 }
 
 .fill-white {
   & * {
-    fill: $col-white;
+    fill: $col-white !important;
   }
 }

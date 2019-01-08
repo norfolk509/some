@@ -3,6 +3,12 @@ function closeSidebar() {
     $('.sidebar, .main-content').addClass('sidebar-closed');
     $('.js-sidebar-item').removeClass('active');
     $('[class*="flyout"]').hide().removeClass('display-left');
+
+    if(typeof $.fn.Slick !== 'undefined') {
+        setTimeout(function(){
+            $('.slider').slick('setPosition');
+        }, animationTime);
+    }
 }
 
 $('.js-close-sidebar').on('click', function() {
@@ -14,6 +20,12 @@ $('.js-close-sidebar').on('click', function() {
 // Open sidebar
 function openSidebar() {
     $('.sidebar, .main-content').removeClass('sidebar-closed');
+
+    if(typeof $.fn.Slick !== 'undefined') {
+        setTimeout(function(){
+            $('.slider').slick('setPosition');
+        }, animationTime);
+    }
 }
 
 // Check width and Open/Close sidebar accordingly, selecting the first flyout

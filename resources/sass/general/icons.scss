@@ -107,7 +107,7 @@
 }
 
 // All icons selector -> class must start with "icon-"
-[class^="icon-"] {
+[class*="icon-"] {
   width: 1em;
   height: 1em;
   background-repeat: no-repeat;
@@ -135,6 +135,16 @@
 .icon-os-linux {
   font-size: em(14px);
   background-image: url("../images/icon-os-linux.svg");
+}
+
+.icon-os-ios {
+  font-size: em(14px);
+  background-image: url("../images/icon-os-ios.svg");
+}
+
+.icon-os-android {
+  font-size: em(14px);
+  background-image: url("../images/icon-os-android.svg");
 }
 
 // Notification icon
@@ -205,7 +215,26 @@
 
 // Various icons
 .icon-timer {
-  width: 1em;
-  height: 1em;
   font-size: em(38px);
+}
+
+.icon-heart {
+  font-size: em(24px);
+  background-image: url("../images/icon-heart.svg");
+
+  &.filled {
+    background-image: url("../images/icon-heart-filled.svg");
+  }
+}
+
+.icon-checkmark {
+  width: .6em;
+  border-style: solid;
+  border-width: 0 .2em .2em 0;
+  display: inline-block;
+  transform: rotate(45deg);
+
+  &.white {
+    border-color: $col-white;
+  }
 }

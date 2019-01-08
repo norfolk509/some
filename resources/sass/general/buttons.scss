@@ -19,7 +19,6 @@
       background-color: $col-light-blue;
     }
 
-
     &.primary {
       color: $col-white;
       background-color: $col-primary;
@@ -47,5 +46,9 @@
     font-size: .75em;
     text-transform: uppercase;
     border-width: 1px;
+  }
+
+  &.label {
+    border-radius: em(5px);
   }
 }

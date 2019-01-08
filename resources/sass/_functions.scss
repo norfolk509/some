@@ -10,3 +10,16 @@
 
   @return $pixels / $context * 1em;
 }
+
+// Calculate VW from standard values
+@function vw($breakpoint, $size: $font-size-base) {
+  @if (unitless($breakpoint)) {
+    $breakpoint: $breakpoint * 1px;
+  }
+
+  @if (unitless($size)) {
+    $size: $size * 1px;
+  }
+
+  @return $size * 100 / $breakpoint * 1vw;
+}

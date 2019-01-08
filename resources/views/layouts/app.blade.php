@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}" dir="ltr">
 <head>
-    @include('layouts.head')
+@include('layouts.head')
+@stack('stylesheets_stack')
 </head>
 <body class="{{ device_agent()->isDesktop() ? 'dsktp' : '' }}">
 <div id="page">

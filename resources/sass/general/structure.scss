@@ -27,25 +27,32 @@ a {
 // General structure
 
 // Scrollbar
-.sidebar {
-  scrollbar-width: thin;
-}
+.scrollbar {
+  *,
+  & {
+    scrollbar-width: thin;
+  }
 
-.sidebar ::-webkit-scrollbar-track {
-  border-radius: 8px;
-  background-color: transparent;
-  box-shadow: inset 0 0 6px rgba(0,0,0,.5);
-}
+  ::-webkit-scrollbar-track,
+  &::-webkit-scrollbar-track {
+    border-radius: 8px;
+    background-color: transparent;
+    box-shadow: inset 0 0 6px rgba(0,0,0,.5);
+  }
 
-.sidebar ::-webkit-scrollbar {
-  width: 10px;
-  background-color: transparent;
-}
+  ::-webkit-scrollbar,
+  &::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+    background-color: transparent;
+  }
 
-.sidebar ::-webkit-scrollbar-thumb {
-  border-radius: 8px;
-  background-color: lighten($col-body-bg, 10%);
-  box-shadow: inset 0 0 6px rgba(0,0,0,.5);
+  ::-webkit-scrollbar-thumb,
+  &::-webkit-scrollbar-thumb {
+    border-radius: 8px;
+    background-color: lighten($col-body-bg, 10%);
+    box-shadow: inset 0 0 6px rgba(0,0,0,.5);
+  }
 }
 
 // Flex containers
@@ -79,6 +86,12 @@ a {
   flex-wrap: wrap;
 }
 
+.flx-w-sp-b {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
 // Margins
 .mar-a-l {
   margin-left: auto;
@@ -90,17 +103,18 @@ a {
 
 // General containers
 .main-content {
+  display: flex;
+  flex-direction: column;
   margin-left: $width-sidebar;
-  padding: 2em 0 1em 1em;
+  padding: 2em 0 1em;
   transition: margin $transition-time;
 
   @include desktop-xl {
     margin-left: $header-height;
-    padding-left: 3em;
   }
-  @include device-small {
+  @include device {
     margin-left: 0 !important;
-    padding: 0 .625em;
+    padding: 0 !important;
   }
 
   &.sidebar-closed {

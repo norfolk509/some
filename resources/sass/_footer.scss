@@ -1,21 +1,22 @@
 footer {
-  margin-top: 1.5em;
-  margin-right: 4em;
+  margin: 1.5em 4em 0 4em;
   padding: 2em 0 1em;
-  border-top: 1px solid rgba(55,56,76,.5);
+  border-top: 1px solid $col-border;
 
   @include desktop-xl {
-    margin-right: 3em;
+    margin-right: 2em;
+    margin-left: 2em;
   }
   @include device-small {
-    margin-right: 0;
+    margin-right: 1em;
+    margin-left: 1em;
     border-top: 0;
   }
 }
 
 .brd-btm {
   padding-bottom: 2em;
-  border-bottom: 1px solid rgba(55,56,76,.5);
+  border-bottom: 1px solid $col-border;
 
   @include device-small {
     padding: 0;

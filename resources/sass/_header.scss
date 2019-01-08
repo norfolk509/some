@@ -8,7 +8,7 @@ header {
 .header-height {
   height: $header-height;
 
-  @include mobile {
+  @include device {
     height: em($header-height-mobile);
   }
 }
@@ -21,11 +21,7 @@ header {
   }
 }
 
-.header-logo-icon {
-  width: $top-logo-width;
-  height: $top-logo-height;
-  margin: 0 2em 0 1em;
-
+.header-logo {
   @include device {
     position: absolute;
     top: 50%;
@@ -35,11 +31,24 @@ header {
   }
 }
 
+.header-logo-icon {
+  width: $top-logo-width;
+  height: $top-logo-height;
+  margin: 0 2em 0 1em;
+
+  @include device {
+    margin: 0;
+  }
+}
+
 .header-logo-text {
   width: $top-logo-text-width;
   height: $top-logo-text-height;
 
   @include device {
+    margin-left: .6em;
+  }
+  @include mobile {
     display: none;
   }
 }

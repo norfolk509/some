@@ -69,8 +69,13 @@ class HomeController extends Controller
         //GET hottest genre TODO change when GATEWAY API return correct data
         $hottestGenres = $this->gameModel->getHottestGenres();
 
+        $isDesktop = device_agent()->isDesktop();
+
+        // TODO change when implementing languages and add IF in view
+        $topLanguageGames = $freePornGames;
+
         return view('home.index', compact('skin', 'bannerGames', 'gameEvents', 'freePornGames',
-            'premiumPornGames', 'newestPornGames', 'topAndroidGames', 'topIOSGames', 'hottestGenres'));
+            'premiumPornGames', 'newestPornGames', 'topAndroidGames', 'topIOSGames', 'hottestGenres', 'isDesktop', 'topLanguageGames'));
     }
 
 }

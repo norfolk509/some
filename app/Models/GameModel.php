@@ -25,7 +25,8 @@ class GameModel
         return [
             'url' => '/',
             'image' => '/images/temp/larger-full-width-skin.png',
-            'alt' => 'Welcome to Nutaku'
+            'alt' => 'Welcome to Nutaku',
+            'is_skin_set' => true // TODO: Temporary set to verify Page Skin availability
         ];
     }
 

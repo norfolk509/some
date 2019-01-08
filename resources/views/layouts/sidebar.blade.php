@@ -1,4 +1,4 @@
-<section class="sidebar flx">
+<section class="sidebar flx scrollbar">
     <div class="sidebar-icons-bar">
         <div class="header-height flx-a-c">
             <a href="/" class="logo">

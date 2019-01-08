@@ -47,6 +47,18 @@ Route::group(['prefix' => 'support'], function()
 Route::post('/user/set-game-notifications/{user_id}/{game_id}', 'UserSettingsController@setNotifications');
 Route::post('/user/set-favorite-game/{user_id}/{game_id}', 'UserSettingsController@setFavoriteGame');
 
+/********************
+ *** Local usage ***
+ ********************/
+
+Route::get('/card-examples', function() {
+    if (app('env') == 'production') {
+        return redirect('/');
+    }
+
+    return view('card-examples.index');
+});
+
 /**********************
  ***  Lgbtq Pages ***
  **********************/

@@ -1,0 +1,152 @@
+// General Slider
+.slick-slider {
+  position: relative;
+  display: block;
+  user-select: none;
+
+  touch-action: pan-y;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.slick-list {
+  position: relative;
+  display: block;
+  overflow: visible;
+  margin: 0;
+  padding: 0;
+
+  &:focus {
+    outline: none;
+  }
+
+  &.dragging {
+    cursor: pointer;
+    cursor: hand;
+  }
+}
+
+.slick-slider .slick-track,
+.slick-slider .slick-list {
+  transform: translate3d(0, 0, 0);
+}
+
+.slick-track {
+  position: relative;
+  top: 0;
+  left: 0;
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+
+  &:before,
+  &:after {
+    display: table;
+    content: "";
+  }
+
+  &:after {
+    clear: both;
+  }
+
+  .slick-loading & {
+    visibility: hidden;
+  }
+}
+
+.slick-slide {
+  display: none;
+  float: left;
+  height: 100%;
+  min-height: 1px;
+
+  [dir="rtl"] & {
+    float: right;
+  }
+
+  img {
+    display: block;
+  }
+
+  &.slick-loading img {
+    display: none;
+  }
+
+  &.dragging img {
+    pointer-events: none;
+  }
+
+  &.hidden {
+    opacity: 0;
+  }
+
+  .slick-initialized & {
+    display: block;
+  }
+
+  .slick-loading & {
+    visibility: hidden;
+  }
+
+  .slick-vertical & {
+    display: block;
+    height: auto;
+    border: 1px solid transparent;
+  }
+}
+
+.slick-arrow {
+  position: absolute;
+  z-index: 10;
+  top: 0;
+  width: 1.5em;
+  height: 100%;
+  margin: 0;
+  font-size: em(36px);
+  transition: opacity $transition-time ease-in-out;
+
+  @include device {
+    display: none;
+  }
+
+  &.slick-hidden {
+    display: none;
+  }
+
+  &.slick-next {
+    right: -1em;
+    background: linear-gradient(to right, rgba($col-darker-blue, 0) 0%, rgba($col-darker-blue, .85) 100%);
+  }
+
+  &.slick-prev {
+    left: -1em;
+    background: linear-gradient(to left, rgba($col-darker-blue, 0) 0%, rgba($col-darker-blue, .85) 100%);
+  }
+
+  &.slick-disabled {
+    z-index: -1 !important;
+    opacity: 0 !important;
+  }
+}
+
+.slick-dots {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 1em 2em 0 auto;
+
+  li {
+    width: em(16px);
+    height: em(3px);
+    margin-right: em(3px);
+    text-indent: -999em;
+    opacity: 1 !important;
+    border-radius: em(3px);
+    outline: 0;
+    background-color: rgba($col-white, .2);
+  }
+
+  .slick-active {
+    background-color: rgba($col-white, .7);
+  }
+}

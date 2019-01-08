@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
+
     <div>
         <h1>@lang('static.about')</h1>
     </div>

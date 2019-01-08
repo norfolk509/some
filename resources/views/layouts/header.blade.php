@@ -2,7 +2,7 @@
     <span class="device-menu-icon flx js-menu-icon"></span>
 
     <div class="left-side flx-a-c">
-        <a href="/" class="flx-a-c logo">
+        <a href="/" class="flx-a-c header-logo">
             @svg('nutaku-logo-icon', 'header-logo-icon')
             @svg('nutaku-logo-text', 'header-logo-text')
         </a>
